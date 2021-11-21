@@ -1,0 +1,13 @@
+.DataPanel {
+  background-color: var(--bg-color-dark);
+  padding: 10px;
+  width: 100%;
+  z-index: 100;
+}
+
+@media only screen and (min-width: 1000px) {
+  .DataPanel {
+    width: 70vw;
+    height: 100vh;
+  }
+}

@@ -1,0 +1,35 @@
+.MainPanel {
+  background-color: var(--bg-color-light);
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10px;
+  position: relative;
+}
+
+.MainPanel__clouds {
+  position: absolute;
+  width: 150%;
+  height: 70%;
+  top: 1rem;
+  left: -25%;
+  opacity: 0.1;
+  z-index: 0;
+  background-image: url('../../assets/images/Cloud-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .MainPanel {
+    width: 30vw;
+    height: 100vh;
+  }
+
+  .MainPanel__clouds {
+    top: 4rem;
+    height: 50%;
+    width: 145%;
+    left: -20%;
+  }
+}
