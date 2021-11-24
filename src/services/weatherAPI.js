@@ -5,7 +5,7 @@ const apiKey = process.env.REACT_APP_WEATHER_API_KEY
 const getTodaysWeather = async location => {
   const response = await axios.get(`${apiUrl}/weather?q=${location}&appid=${apiKey}&units=metric`)
 
-  //console.log(response.data)
+  console.log(response.data)
 
   const todaysWeather = {
     location: response.data.name,
@@ -13,7 +13,7 @@ const getTodaysWeather = async location => {
       description: response.data.weather[0].description,
       id: response.data.weather[0].id
     },
-    temp: response.data.main.temp,
+    temp: Math.round(response.data.main.temp),
     wind: response.data.wind.speed,
     humidity: response.data.main.humidity,
     visibility: response.data.visibility,
@@ -23,6 +23,8 @@ const getTodaysWeather = async location => {
   return todaysWeather
 }
 
-export default {
+const weatherService = {
   getTodaysWeather
 }
+
+export default weatherService
