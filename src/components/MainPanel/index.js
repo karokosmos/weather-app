@@ -2,19 +2,13 @@ import React from 'react'
 import './index.css'
 import Icon from '../Icon'
 import { useSelector } from 'react-redux'
+import { getDateForToday } from '../../helpers/dates'
 
 const MainPanel = () => {
-  const weatherToday = useSelector(state => state.weatherToday)
+  const weatherData = useSelector(state => state.weatherData)
+  const location = useSelector(state => state.location)
 
-  const getDate = () => {
-    const date = new Date()
-    const formattedDate = date.toLocaleDateString('en-GB', {
-      weekday: 'short', day: 'numeric', month: 'short'
-    })
-    return formattedDate
-  }
-
-  if (!weatherToday) {
+  if (!weatherData) {
     return <div className="MainPanel"></div>
   }
 
@@ -23,22 +17,22 @@ const MainPanel = () => {
       <div className="MainPanel__clouds"></div>
       <div className="MainPanel__content">
         <div className="MainPanel__icon">
-          <Icon weatherId={weatherToday.weather.id} />
+          <Icon weatherId={weatherData.current.weather_id} />
         </div>
         <div className="MainPanel__temp-container">
-          <p className="MainPanel__temp">{weatherToday.temp}</p>
+          <p className="MainPanel__temp">{weatherData.current.temp}</p>
           <p className="MainPanel__temp-system">°C</p>
         </div>
-        <p className="MainPanel__desc">{weatherToday.weather.description}</p>
+        <p className="MainPanel__desc">{weatherData.current.description}</p>
         <div className="MainPanel__details">
           <p className="MainPanel__date">
             Today
             <span>&#8226;</span>
-            {getDate()}
+            {getDateForToday()}
           </p>
           <div className="MainPanel__location">
             <span className="material-icons">place</span>
-            <p>{weatherToday.location}</p>
+            <p>{location}</p>
           </div>
         </div>
       </div>

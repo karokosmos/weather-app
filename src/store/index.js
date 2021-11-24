@@ -6,7 +6,7 @@ import weatherReducer from './reducers/weatherReducer'
 import locationReducer from './reducers/locationReducer'
 
 const reducer = combineReducers({
-  weatherToday: weatherReducer,
+  weatherData: weatherReducer,
   location: locationReducer
 })
 
