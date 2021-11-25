@@ -1,4 +1,4 @@
-const locationReducer = (state = 'Helsinki', action) => {
+const locationReducer = (state = 'Bangkok', action) => {
   switch (action.type) {
     case 'SET_LOCATION':
       return action.payload

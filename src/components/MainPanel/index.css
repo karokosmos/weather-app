@@ -29,6 +29,7 @@
 }
 
 .MainPanel__icon {
+  width: 23vh;
   padding-top: 17vh;
   padding-right: 2rem;
 }
@@ -48,7 +49,7 @@
 .MainPanel__temp-system {
   font-weight: 500;
   font-size: 4vh;
-  padding-top: 13vh;
+  padding-top: 10vh;
   color: var(--color-grey);
 }
 
@@ -56,7 +57,7 @@
   color: var(--color-grey);
   font-weight: 600;
   font-size: 4vh;
-  margin: 7vh 1vh;
+  margin: 10vh 1vh 5vh 1vh;
 }
 
 .MainPanel__desc::first-letter {
@@ -97,7 +98,7 @@
   }
 
   .MainPanel__clouds {
-    top: 1.5rem;
+    top: 0.5rem;
     height: 50vh;
     width: 45vw;
     left: -7.5vw;

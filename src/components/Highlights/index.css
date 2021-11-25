@@ -1,0 +1,99 @@
+.Highlights__header {
+  font-weight: 700;
+  font-size: 2.5vh;
+  padding-top: 4vh;
+}
+
+.Highlights__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.4rem;
+}
+
+.Highlights__card {
+  background-color: var(--bg-color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vh 4vw;
+}
+
+.Highlights__card-title {
+  margin: 0;
+  padding-bottom: 1vh;
+}
+
+.Highlights__data {
+  display: flex;
+  align-items: center;
+}
+
+.Highlights__num {
+  font-weight: 700;
+  font-size: 4vw;
+  margin: 0;
+}
+
+.Highlights__sys {
+  font-weight: 500;
+  font-size: 1.7vw;
+  padding-top: 0.5vw;
+  margin: 0;
+}
+
+.Highlights__wind {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding-top: 1.3vh;
+}
+
+.Highlights__wind p {
+  font-size: 0.8rem;
+}
+
+.Highlights__wind-direction {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 6px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.Highlights__humidity {
+  width: 100%;
+}
+
+.Highlights__bar-nums {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Highlights__bar-nums p {
+  margin: 1vh 0 5px 0;
+  font-size: 0.8rem;
+  color: var(--color-grey);
+}
+
+.Highlights__bar-percent {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--color-grey);
+}
+
+.Highlights__bar-percent p {
+  margin: 5px 0 0 0;
+  font-size: 0.8rem;
+}
+
+.Highlights__bar {
+  width: 100%;
+  background-color: var(--color-text);
+  border-radius: 80px;
+}
+
+.Highlights__bar-inner {
+  background-color: #FFEC65;
+  height: 8px;
+  border-radius: inherit;
+}

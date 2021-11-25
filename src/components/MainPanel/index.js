@@ -2,7 +2,7 @@ import React from 'react'
 import './index.css'
 import Icon from '../Icon'
 import { useSelector } from 'react-redux'
-import { getDateForToday } from '../../helpers/dates'
+import { getDateForToday } from '../../utils/dates'
 
 const MainPanel = () => {
   const weatherData = useSelector(state => state.weatherData)
@@ -28,7 +28,7 @@ const MainPanel = () => {
           <p className="MainPanel__date">
             Today
             <span>&#8226;</span>
-            {getDateForToday()}
+            {getDateForToday(weatherData.current.timezone)}
           </p>
           <div className="MainPanel__location">
             <span className="material-icons">place</span>

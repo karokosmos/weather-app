@@ -4,6 +4,7 @@
   --bg-color-light: #1E213A;
   --bg-color-dark: #100E1D;
   --color-grey: #A09FB1;
+  --color-text: #E7E7EB;
 }
 
 * {
@@ -17,7 +18,7 @@ body {
 html {
   font-family: 'Raleway',
     sans-serif;
-  color: #fff;
+  color: var(--color-text);
 }
 
 @media only screen and (min-width: 1000px) {

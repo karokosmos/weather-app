@@ -1,6 +1,6 @@
 import axios from 'axios'
 import geocodingService from './geocodingAPI'
-import { getDateFromTimestamp } from '../helpers/dates'
+import { getDateFromTimestamp } from '../utils/dates'
 
 const apiUrl = 'https://api.openweathermap.org/data/2.5'
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY
@@ -24,7 +24,8 @@ const formatCurrentWeather = current => {
     description: current.weather[0].description,
     weather_id: current.weather[0].id,
     temp: Math.round(current.temp),
-    wind: current.wind_speed,
+    wind: Math.round(current.wind_speed),
+    wind_deg: current.wind_deg,
     humidity: current.humidity,
     visibility: current.visibility,
     pressure: current.pressure
@@ -37,9 +38,14 @@ const getWeather = async location => {
   const response = await axios.get(`${apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`)
 
   const weather = {
-    current: formatCurrentWeather(response.data.current),
+    current: {
+      timezone: response.data.timezone,
+      ...formatCurrentWeather(response.data.current)
+    },
     forecast: formatForecast(response.data.daily)
   }
+
+  console.log(weather)
   return weather
 }
 
