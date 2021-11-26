@@ -1,0 +1,93 @@
+.WeatherToday__clouds {
+  position: absolute;
+  width: 150vw;
+  height: 70vh;
+  top: 0;
+  left: -30vw;
+  opacity: 0.1;
+  z-index: 0;
+  background-image: url('../../assets/images/Cloud-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.WeatherToday__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.WeatherToday__icon {
+  width: 23vh;
+  padding-top: 17vh;
+  padding-right: 2rem;
+}
+
+.WeatherToday__temp-container {
+  display: flex;
+  align-items: center;
+}
+
+.WeatherToday__temp {
+  font-weight: 500;
+  font-size: 13vh;
+  margin: 0;
+  padding-top: 8vh;
+}
+
+.WeatherToday__temp-system {
+  font-weight: 500;
+  font-size: 4vh;
+  padding-top: 10vh;
+  color: var(--color-grey);
+}
+
+.WeatherToday__desc {
+  color: var(--color-grey);
+  font-weight: 600;
+  font-size: 4vh;
+  margin: 10vh 1vh 5vh 1vh;
+}
+
+.WeatherToday__desc::first-letter {
+  text-transform: capitalize;
+}
+
+.WeatherToday__details {
+  color: var(--color-grey);
+  position: absolute;
+  bottom: 2rem;
+  font-size: 2vh;
+}
+
+.WeatherToday__date span {
+  padding: 0 0.8rem;
+}
+
+.WeatherToday__location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.WeatherToday__location span {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+  margin-right: 4px;
+}
+
+.WeatherToday__location p {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 1000px) {
+  .WeatherToday__clouds {
+    top: 0.5rem;
+    height: 50vh;
+    width: 45vw;
+    left: -7.5vw;
+  }
+}

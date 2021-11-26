@@ -32,12 +32,33 @@ const formatCurrentWeather = current => {
   }
 }
 
-const getWeather = async location => {
-  const { lat, lon } = await geocodingService.getCoordinates(location)
+const getWeatherForLocation = async location => {
+  const { name, lat, lon } = await geocodingService.getCoordinates(location)
 
   const response = await axios.get(`${apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`)
 
   const weather = {
+    location: name,
+    current: {
+      timezone: response.data.timezone,
+      ...formatCurrentWeather(response.data.current)
+    },
+    forecast: formatForecast(response.data.daily)
+  }
+
+  console.log(weather)
+  return weather
+}
+
+const getWeatherFromCoordinates = async coordinates => {
+  const location = await geocodingService.getLocation(coordinates)
+  console.log(location)
+  const { lat, lon } = coordinates
+
+  const response = await axios.get(`${apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`)
+
+  const weather = {
+    location,
     current: {
       timezone: response.data.timezone,
       ...formatCurrentWeather(response.data.current)
@@ -50,7 +71,8 @@ const getWeather = async location => {
 }
 
 const weatherService = {
-  getWeather
+  getWeatherForLocation,
+  getWeatherFromCoordinates
 }
 
 export default weatherService

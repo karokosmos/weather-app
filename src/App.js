@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import MainPanel from './components/MainPanel'
 import DataPanel from './components/DataPanel'
-import { useDispatch, useSelector } from 'react-redux'
-import { initializeWeather } from './store/actions/weatherActions'
+import { useDispatch } from 'react-redux'
+import { initWeather } from './reducers/weatherReducer'
 
 function App() {
   const dispatch = useDispatch()
-  const location = useSelector(state => state.location)
 
   useEffect(() => {
-    dispatch(initializeWeather(location))
-  }, [dispatch, location])
+    dispatch(initWeather())
+  }, [dispatch])
 
   return (
     <div className="App">

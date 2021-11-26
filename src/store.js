@@ -3,11 +3,11 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 import weatherReducer from './reducers/weatherReducer'
-import locationReducer from './reducers/locationReducer'
+import searchReducer from './reducers/searchReducer'
 
 const reducer = combineReducers({
   weatherData: weatherReducer,
-  location: locationReducer
+  searchOpen: searchReducer
 })
 
 const store = createStore(

@@ -4,6 +4,7 @@
   --bg-color-light: #1E213A;
   --bg-color-dark: #100E1D;
   --color-grey: #A09FB1;
+  --color-dark-grey: #6E707A;
   --color-text: #E7E7EB;
 }
 
@@ -15,7 +16,8 @@ body {
   margin: 0;
 }
 
-html {
+html,
+* {
   font-family: 'Raleway',
     sans-serif;
   color: var(--color-text);

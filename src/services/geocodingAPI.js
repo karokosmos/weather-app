@@ -14,8 +14,18 @@ const getCoordinates = async location => {
   return coordinates
 }
 
+const getLocation = async coordinates => {
+  const { lat, lon } = coordinates
+
+  const response = await axios.get(`${apiUrl}/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`)
+
+  const location = response.data[0].name
+  return location
+}
+
 const geocodingService = {
-  getCoordinates
+  getCoordinates,
+  getLocation
 }
 
 export default geocodingService
