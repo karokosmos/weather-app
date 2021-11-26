@@ -24,7 +24,7 @@ const SearchButtons = () => {
       alert('Unable to retrieve your location')
     }
 
-    navigator.geolocation.getCurrentPosition((success, error))
+    navigator.geolocation.getCurrentPosition(success, error)
   }
 
   return (
