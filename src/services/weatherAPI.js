@@ -46,13 +46,12 @@ const getWeatherForLocation = async location => {
     forecast: formatForecast(response.data.daily)
   }
 
-  console.log(weather)
   return weather
 }
 
 const getWeatherFromCoordinates = async coordinates => {
   const location = await geocodingService.getLocation(coordinates)
-  console.log(location)
+
   const { lat, lon } = coordinates
 
   const response = await axios.get(`${apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`)
@@ -66,7 +65,6 @@ const getWeatherFromCoordinates = async coordinates => {
     forecast: formatForecast(response.data.daily)
   }
 
-  console.log(weather)
   return weather
 }
 
