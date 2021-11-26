@@ -79,6 +79,7 @@ $ npm start
 
 - [Fullstack open 2021 course](https://fullstackopen.com/)
 - [OpenWeather API](https://openweathermap.org/)
+- [Heroku](https://www.heroku.com/)
 
 ## Contact
 
