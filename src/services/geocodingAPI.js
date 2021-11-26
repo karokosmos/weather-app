@@ -1,5 +1,5 @@
 import axios from 'axios'
-const apiUrl = 'http://api.openweathermap.org/geo/1.0'
+const apiUrl = 'https://api.openweathermap.org/geo/1.0'
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY
 
 const getCoordinates = async location => {
